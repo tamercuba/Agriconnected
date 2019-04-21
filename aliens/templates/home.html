@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Agriconnected Aliens</title>
+    </head>
+    <body>
+        <h1>Cadastro de Aliens</h1>
+        <form class="" action="" method="post">
+            <fieldset>
+                <legend>Cadastro:</legend>
+                {% csrf_token %}
+                <table>
+                    <td>{{ form.as_table }}</td>
+                </table>
+                <hr />
+                <input type="Submit" />
+            </fieldset>
+        </form>
+    </body>
+</html>
