@@ -1,16 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, render_to_response
 from django.http      import HttpResponse
 from .forms           import AlienForm
 
 def home(request):
     template_name = 'home.html'
-    if request.method == 'POST':
-        form = AlienForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-    form    = AlienForm()
-    context = {
-        'form': form
-    }
-    return render(request, template_name, context)
+    form = AlienForm(request.POST or None)
+    if form.is_valid():
+        salvar = form.save(commit=False)
+        salvar.save()
+        return redirect('aliens:home')
+    else:
+        context = {
+            'form': form
+        }
+        return render(request, template_name, context)
