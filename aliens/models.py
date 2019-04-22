@@ -1,6 +1,7 @@
-from django.db    import models
-from datetime     import date
-from django.utils import timezone
+from django.db               import models
+from datetime                import date
+from django.utils            import timezone
+from django.utils.functional import cached_property
 
 #
 #           MODELO STATE
@@ -12,10 +13,12 @@ from django.utils import timezone
 class State(models.Model):
     initials = models.CharField('Sigla', max_length=2, blank = False)
     name     = models.CharField('Estado', max_length=50, blank = False)
-    count    = models.IntegerField('Total de eventos', default=0)
+    count    = models.IntegerField('Total de Eventos', default=0)
 
     def __str__(self):
         return self.name
+
+
 
     class Meta:
         verbose_name        = 'Estado'
@@ -35,6 +38,22 @@ class Alien(models.Model):
     state    = models.ForeignKey(State, verbose_name='Estado', related_name='state_fk', on_delete=models.DO_NOTHING)
     date     = models.DateField('Data', blank = False, default = date.today)    # ON_DELETE SETADO COMO DO_NOTHING POIS NENHUM ESTADO
                                                                                 # SERÁ DELETADO DO DB EM NENHUM MOMENTO.
+
+    @property
+    def state_initial(self):
+        return self.state.initials
+
+    @property
+    def state_name(self):
+        return self.state
+
+    def save(self, *args, **kwargs):
+        if self.pk is None:
+            self.state.count += 1
+            self.state.save()
+            super(Alien, self).save(*args, **kwargs)
+        pass
+
     def __str__(self):
         return self.city
 
