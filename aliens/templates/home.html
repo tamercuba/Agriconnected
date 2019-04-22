@@ -1,44 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8" />
-        <title>Agriconnected Aliens</title>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css" />
-        <script>
-            $(function() {
-                $( "#id_date" ).datepicker();
-            });
-        </script>
-        <title>Agriconnected Aliens</title>
-    </head>
-    <body>
-        <form class="" action="" method="post">
-            <fieldset>
-                <legend><h2>Cadastro:</h2></legend>
-                            <form action="/datepickerview/" method="post">
-                            {% for field in form %}
-                            <p>{{ field.label_tag }} {{ field }}</p>
-                                <!--{{ form.date }} -->
-                            {% endfor %}
-                            </form>
+{% extends "base.html" %}
 
+{% load static %}
+{% block date_script %}
+<script>
+    $( function() {
+        $( “#id_date” ).datepicker({minDate: 0, maxDate: "+24M"});
+    } );
+</script>
+{% endblock %}
+{% block content %}
 
-
-
-                            <script>
-                                $(function () {
-                                    $('.datepicker').datepciker({
-                                        format:'YYYY-MM-DD '
-                                    });
-                                });
-                            </script>
-
-                <hr />
-                <input type="Submit" />
-            </fieldset>
+<div class="container">
+    <form class="" action="" method="post">
+        <legend><h2>Cadastro:</h2></legend>
+        <form action="/datepickerview/" method="post">
+        {% for field in form %}
+        <div class="well">
+                <p>{{ field.label }}: {{ field }}</p>
+        </div>
+        {% endfor %}
         </form>
-    </body>
-</html>
+        <hr />
+        <input class="btn btn-primary" type="Submit" />
+    </form>
+</div>
+{% endblock %}
