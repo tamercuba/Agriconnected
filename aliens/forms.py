@@ -6,11 +6,8 @@ from .models      import Alien, State
 
 
 class AlienForm(forms.ModelForm):
-    city  = forms.CharField(label='Cidade')
-    state = forms.ModelChoiceField(label='Estado',queryset=State.objects.all())
-    date  = forms.DateInput(attrs={'class':'datepicker'})
 
     class Meta:
-        model  = Alien
-
-        fields = '__all__'
+        model   = Alien
+        fields  = ['city', 'state', 'date']
+        widgets = {'date': forms.DateInput(attrs={'class': 'datepicker'})} 
