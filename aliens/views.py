@@ -4,7 +4,10 @@ from .forms           import AlienForm
 from .models          import Alien, State
 
 def home(request):
-    template_name = 'home.html'
+    return render(request, template_name='home.html')
+
+def register(request):
+    template_name = 'register.html'
     form = AlienForm(request.POST or None)
     if form.is_valid():
         salvar = form.save(commit=False)
