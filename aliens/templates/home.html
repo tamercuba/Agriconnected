@@ -1,27 +1,13 @@
 {% extends "base.html" %}
 
 {% load static %}
-{% block date_script %}
-<script>
-    $( function() {
-        $( “#id_date” ).datepicker({minDate: 0, maxDate: "+24M"});
-    } );
-</script>
-{% endblock %}
+
 {% block content %}
 
+
 <div class="container">
-    <form class="" action="" method="post">
-        <legend><h2>Cadastro:</h2></legend>
-        <form action="/datepickerview/" method="post">
-        {% for field in form %}
-        <div class="well">
-                <p>{{ field.label }}: {{ field }}</p>
-        </div>
-        {% endfor %}
-        </form>
-        <hr />
-        <input class="btn btn-primary" type="Submit" />
-    </form>
+    <h1>Agriconnected Alien</h1>
+    <h2>Buscando soluções otimizadas para a redução de danos causada por extra-terrestres.</h2>
 </div>
+
 {% endblock %}
