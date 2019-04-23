@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <form action="" method="post">
+        <div class="form-group">
+            <legend><h2>Cadastro:</h2></legend>
+                    <p>{{ form.city.label }}<br>{{ form.city }}</p>
+                    <p>{{ form.state.label }}<br>{{ form.state }}</p>
+                    <p>{{ form.date.label }}<br>{{ form.date }}
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span></p>
+            <script>
+                $('#datepicker').datepicker({
+                    uiLibrary: 'bootstrap4'
+                });
+            </script>
+            <hr />
+            <input class="btn btn-primary" type="submit" value="Enviar" />
+        </div>
+    </form>
+</div>
+{% endblock %}
