@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 <body>
-    <table class="table">
-        <tr>
-            <th>Cidade</th>
-            <th>Estado</th>
-            <th>Data</th>
-        </tr>
-        {% for alien in aliens %}
-        <tr>
-            <td>{{ alien.city }}</td>
-            <td>{{ alien.state_name }}</td>
-            <td>{{ alien.date }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+
+
+        <table class="table">
+            <tr>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Data</th>
+            </tr>
+            {% for alien in aliens %}
+            <tr>
+                <td>{{ alien.city }}</td>
+                <td>{{ alien.state_name }}</td>
+                <td>{{ alien.date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 {% endblock %}
