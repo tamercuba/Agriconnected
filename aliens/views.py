@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, render_to_response
 from django.http      import HttpResponse
 from .forms           import AlienForm
 from .models          import Alien, State
+from django.contrib   import messages
 
 def home(request):
     return render(request, template_name='home.html')
@@ -12,7 +13,8 @@ def register(request):
     if form.is_valid():
         salvar = form.save(commit=False)
         salvar.save()
-        return redirect('aliens:home')
+        messages.success(request, 'Seu cadastro foi efetuado com sucesso, muito obrigado!')
+        return redirect('aliens:register')
     else:
         context = {
             'form': form
