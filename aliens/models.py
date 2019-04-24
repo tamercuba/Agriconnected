@@ -35,7 +35,7 @@ class State(models.Model):
 #
 class Alien(models.Model):
     city     = models.CharField('Cidade', max_length=50, blank = False)
-    state    = models.ForeignKey(State, verbose_name='Estado', related_name='state_fk', on_delete=models.DO_NOTHING)
+    state    = models.ForeignKey(State, verbose_name='Estado', related_name='state_fk', on_delete=models.DO_NOTHING, blank=False)
     date     = models.DateField('Data', blank = False, default = date.today)    # ON_DELETE SETADO COMO DO_NOTHING POIS NENHUM ESTADO
                                                                                 # SERÁ DELETADO DO DB EM NENHUM MOMENTO.
 
@@ -60,3 +60,11 @@ class Alien(models.Model):
     class Meta:
         verbose_name        = 'Ocorrência'
         verbose_name_plural = 'Ocorrências'
+
+def post_delete_alien(instance, **kwargs):
+    instance.state.count -= 1
+    instance.state.save()
+
+models.signals.post_delete.connect(
+    post_delete_alien, sender=Alien, dispatch_uid='post_delete_alien'
+)
