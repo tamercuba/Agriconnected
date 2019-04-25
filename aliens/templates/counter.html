@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}
+<title>Sumário | Aliens </title>
+{% endblock %}
 {% block navbar %}
 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
     <ul class="navbar-nav ml-auto">
@@ -13,7 +16,7 @@
             <a class="nav-link" href="{% url 'aliens:alien_list' %}">Listagem</a>
         </li>
         <li class="nav-item  active">
-            <a class="nav-link " href="{% url 'aliens:alien_counter' %}">Contagem</a>
+            <a class="nav-link " href="{% url 'aliens:alien_counter' %}">Sumário</a>
         </li>
     </ul>
 </div>
