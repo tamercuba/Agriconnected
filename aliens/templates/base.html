@@ -4,8 +4,8 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8" />
-        <title>Agriconnected | Aliens</title>
-        <link rel="shorcut icon" type="image/png" href="{% static '/images/favicon.ico' %}">
+        {% block title %}{% endblock %}
+        <link rel="shorcut icon" type="image/png" href="{% static '/images/alien-white.png' %}">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,11 +13,14 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
-    <body style="font-family: Helvetica">
+    <body style="font-family: 'Montserrat', sans-serif">
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00702e;">
             <a class="navbar-brand" href="{% url 'aliens:home' %}">
-                <img src="{% static 'images/alien-icon.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                <img src="{% static 'images/alien-white-quadrado.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,5 +29,36 @@
         </nav>
 
         {% block content %}{% endblock %}
+        <footer class="footer custom-footer">
+            <div class="container">
+                <div class="row footer-row-2">
+
+                    <div class="col text-md-left">
+                        <h5 class="text-uppercase">contato:</h5>
+                    </div>
+                </div>
+                <div class="row footer-row-1">
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <a class="custom-link" href="https://www.facebook.com/agriconnected"> <i class="fab fa-facebook fa-2x"></i> </a>
+                    </div>
+                    <div class="col-2">
+                        <a class="custom-link" href="https://www.linkedin.com/company/agriconnected"><i class="fab fa-linkedin-in fa-2x"></i> </a>
+                    </div>
+                    <div class="col-2">
+                        <a class="custom-link" href="https://www.instagram.com/agriconnected/"><i class="fab fa-instagram fa-2x"></i></a>
+                    </div>
+                    <div class="col-2">
+                        <a class="custom-link" href="https://www.youtube.com/channel/UC-sRApF3TVKvDBvLED6jWew"> <i class="fab fa-youtube fa-2x"></i></a>
+                    </div>
+                    <div class="col-2"> </div>
+                </div>
+            </div>
+            <div class="row-md">
+                <div class="col-md" style="background-color: #013818">
+                    <small>Desenvoledor: Tâmer Pinheiro Cuba</small>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
