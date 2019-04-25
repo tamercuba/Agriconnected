@@ -1,0 +1,31 @@
+.custom-link {
+    color: #ffffff;
+}
+a:visited{
+    color: #ffffff;
+}
+a:hover{
+    color: #a3a3a3;
+}
+a:active{
+    color: #a3a3a3;
+}
+
+.custom-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #00702e;
+  color: white;
+  text-align: center;
+}
+
+.footer-row-1{
+    padding-top: 3px;
+    padding-bottom: 13px
+}
+
+.footer-row-2{
+    padding-top: 10px;
+}
