@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% load static %}
-
+{% block title %}
+<title>Aliens | AgriConnected </title>
+{% endblock %}
 {% block navbar %}
 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
     <ul class="navbar-nav ml-auto">
@@ -15,7 +17,7 @@
             <a class="nav-link" href="{% url 'aliens:alien_list' %}">Listagem</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="{% url 'aliens:alien_counter' %}">Contagem</a>
+            <a class="nav-link " href="{% url 'aliens:alien_counter' %}">Sumário</a>
         </li>
     </ul>
 </div>
@@ -23,7 +25,28 @@
 
 {% block content %}
 <div class="container">
-    <h1>Agriconnected Alien</h1>
-    <h2>Buscando soluções otimizadas para a redução de danos causada por extra-terrestres.</h2>
+    <div class="row">
+        <div class="col"><br>
+            <div class="text-center">
+                <h1>Conheça o projeto Aliens</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"><br>
+            <p>Embora pouco divulgado um dos grandes problemas que o agronegócio enfrenta atualmente
+            são os círculos alienígenas nas plantações. Todos os anos parte significativa das safras de nossas plantações
+            são perdidas por causa dos alienígenas, sendo assim a AgriConnected decidiu enfrentar o problema de minimizar os danos.</p>
+            <p>Nosso projeto visa registrar todos os eventos ocorridos para que possamos identificar padrões e solucionar esse problema. </p>
+        </div>
+        <div class="col-8"><br>
+            <img src="{% static 'images/alien-circle-1.jpg' %}" class="rounded float-left img-fluid" alt="Alien circle" width="588" height="411">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p></p>
+        </div>
+    </div>
 </div>
 {% endblock %}
