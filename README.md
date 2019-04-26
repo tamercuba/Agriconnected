@@ -1,4 +1,5 @@
 # Agriconnected Aliens
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 > Catalogando todas aparições alienígenas do Brasil.
 
 Parágrafo apresentando o projeto
@@ -59,4 +60,6 @@ Pronto, você ja pode rodar o site na sua maquina, faça
 
 Para acessar o site basta digitar `localhost:8000` no seu navegador.
 
-## Sobre o Autor
+## Contato
+* [LinkedIn](https://linkedin.com/in/tamercuba)
+* E-mail: tamercuba@gmail.com
