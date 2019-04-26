@@ -24,7 +24,7 @@ Após isso navegue até a pasta do projeto (onde está o arquivo `requirements.t
 >pip install -r requirements.txt
 
 Instale o PostgreSQL na sua maquina, crie um banco de dados com o nome que desejar e no arquivo `settings.py` faça
->DATABASES = {
+`DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'NOME_DO_SEU_DB',
@@ -33,7 +33,7 @@ Instale o PostgreSQL na sua maquina, crie um banco de dados com o nome que desej
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}
+}`
 
 Execute os seguintes comandos para migrar o banco de dados
 >./manage.py makemigrations
