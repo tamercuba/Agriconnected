@@ -37,10 +37,18 @@ a:active{
 }
 
 .footer-row-1{
-    padding-top: 3px;
-    padding-bottom: 13px
+    padding-top: 0px;
+    padding-bottom: 10px
 }
 
 .footer-row-2{
     padding-top: 10px;
+}
+
+.nav-color{
+    background-color: #00702e;
+}
+
+.col-second-footer {
+    background-color: #013818;
 }
