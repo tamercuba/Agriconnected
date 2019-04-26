@@ -36,7 +36,8 @@ Após isso navegue até a pasta do projeto (onde está o arquivo `requirements.t
 >pip install -r requirements.txt
 
 Instale o PostgreSQL na sua maquina, crie um banco de dados com o nome que desejar e no arquivo `settings.py` altere
-a suinte parte com as configurações do seu banco de dados
+os campos abaixo com as configurações do seu banco de dados
+
 `DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
