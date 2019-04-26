@@ -5,6 +5,17 @@ Parágrafo apresentando o projeto
 
 GIF DO FRONT-END
 
+## Tecnologias utilizadas
+* Python 3.7.0
+* Django 2.2
+* Bootstrap 4.0
+* Jquerry 3.4
+* [Gijgo](https://gijgo.com/datepicker/example/bootstrap-4) Bootstrap 4 DatePicker
+* Font Awesome icons
+* PostgreSQL 9.2
+* Git 2.21.0
+* Atom 1.36
+
 ## Instalação
 Esse guia funciona apenas para sistemas operacionais com kernel Linux, se você quiser executá-lo
 em outro sistema operacional e compartilhar a experiência aqui fiquei a vontade.
@@ -23,7 +34,8 @@ Crie seu ambiente virtual na pasta que desejar (recomendamos que utilize uma pas
 Após isso navegue até a pasta do projeto (onde está o arquivo `requirements.txt`) e execute
 >pip install -r requirements.txt
 
-Instale o PostgreSQL na sua maquina, crie um banco de dados com o nome que desejar e no arquivo `settings.py` faça
+Instale o PostgreSQL na sua maquina, crie um banco de dados com o nome que desejar e no arquivo `settings.py` altere
+a suinte parte com as configurações do seu banco de dados
 `DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
