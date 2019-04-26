@@ -28,20 +28,22 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
-            <table class="table table-bordered table-hover ">
-                <thead align="center">
-                    <th>Cidade</th>
-                    <th>Estado</th>
-                    <th>Data</th>
-                </thead>
-                {% for alien in aliens %}
-                <tr align="center">
-                    <td>{{ alien.city }}</td>
-                    <td>{{ alien.state_name }}</td>
-                    <td>{{ alien.date }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover ">
+                    <thead align="center">
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Data</th>
+                    </thead>
+                    {% for alien in aliens %}
+                    <tr align="center">
+                        <td>{{ alien.city }}</td>
+                        <td>{{ alien.state_name }}</td>
+                        <td>{{ alien.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
         <div class="col-3"></div>
     </div>

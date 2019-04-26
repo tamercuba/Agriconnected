@@ -28,22 +28,24 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-            <table class="table table-bordered table-hover">
-                <thead class="thead" align="center">
-                    <tr>
-                        <th>Estado</th>
-                        <th>Total de Eventos</th>
-                    </tr>
-                </thead>
-                <tbody align="center">
-                    {% for state in states %}
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead" align="center">
                         <tr>
-                        <td>{{ state }}</td>
-                        <td>{{ state.count }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                            <th>Estado</th>
+                            <th>Total de Eventos</th>
+                        </tr>
+                    </thead>
+                    <tbody align="center">
+                        {% for state in states %}
+                            <tr>
+                            <td>{{ state }}</td>
+                            <td>{{ state.count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="col-4"></div>
     </div>
