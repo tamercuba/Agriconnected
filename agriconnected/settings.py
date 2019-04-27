@@ -25,7 +25,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['localhost', 'herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'herokuapp.com', 'agriconnected-aliens.herokuapp.com']
 
 
 # Application definition
