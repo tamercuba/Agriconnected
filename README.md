@@ -2,15 +2,18 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 > Catalogando todas aparições alienígenas do Brasil.
 
-Parágrafo apresentando o projeto
+Embora pouco divulgado um dos grandes problemas que o agronegócio enfrenta atualmente são os círculos alienígenas nas plantações. Todos os anos parte significativa das safras de nossas plantações são perdidas por causa dos alienígenas, sendo assim a AgriConnected decidiu enfrentar o problema de minimizar os danos.
 
-GIF DO FRONT-END
+Nosso projeto visa registrar todos os eventos ocorridos para que possamos identificar padrões e solucionar esse problema.
+
+![](print.gif)
 
 ## Tecnologias utilizadas
 * Python 3.7.0
 * Django 2.2
 * Bootstrap 4.0
 * Jquerry 3.4
+* Python Decouple 3.1
 * [Gijgo](https://gijgo.com/datepicker/example/bootstrap-4) Bootstrap 4 DatePicker
 * Font Awesome icons
 * PostgreSQL 9.2
@@ -35,19 +38,29 @@ Crie seu ambiente virtual na pasta que desejar (recomendamos que utilize uma pas
 Após isso navegue até a pasta do projeto (onde está o arquivo `requirements.txt`) e execute
 >pip install -r requirements.txt
 
-Instale o PostgreSQL na sua maquina, crie um banco de dados com o nome que desejar e no arquivo `settings.py` altere
-os campos abaixo com as configurações do seu banco de dados
+Instale o PostgreSQL na sua maquina, crie e configure um banco de dados psql. Vá no arquivo `settings.py` e abaixo de `import os` digite: `from decouple import config`, após isso vá até
+altere da seguinte maneira a variavel `DATABASES`:
 
 `DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'NOME_DO_SEU_DB',
-        'USER': 'USUARIO_QUE_O_DJANGO_IRA_UTILIZAR',
-        'PASSWORD': 'SUA_SENHA',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }`
+
+Após isso crie um arquivo `.env` no diretório root do projeto com as seguintes informações:
+
+`
+DB_NAME=nome_do_seu_db
+DB_USER=usuario_que_o_django_utilizara_para_acessar_o_db
+DB_PASSWORD=pw_do_db
+DB_HOST=host_do_db
+DB_PORT=porta_do_db
+` 
 
 Execute os seguintes comandos para migrar o banco de dados
 >./manage.py makemigrations
