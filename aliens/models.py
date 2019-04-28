@@ -3,6 +3,9 @@ from datetime                import date
 from django.utils            import timezone
 from django.utils.functional import cached_property
 
+# A ESCOLHA DE CRIAR UM MODELO SEPARA PARA OS ESTADOS FOI UMA TENTATIVA DE DEIXAR O BANCO DE DADOS NORMALIZADO SEGUNDO A 3NF. 
+#
+#
 #
 #           MODELO STATE
 #    CAMPOS:
@@ -61,6 +64,9 @@ class Alien(models.Model):
         verbose_name        = 'Ocorrência'
         verbose_name_plural = 'Ocorrências'
 
+#
+# SIGNALS CRIADO COM INTUITO DE MANTER O DB CONSISTENTE QUANDO O ADMIN DECIDIR DELETAR UMA INSTANCIA DO MODELO ALIEN
+#
 def post_delete_alien(instance, **kwargs):
     instance.state.count -= 1
     instance.state.save()
