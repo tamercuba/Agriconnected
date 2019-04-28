@@ -1,7 +1,6 @@
 # Agriconnected Aliens
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-> Catalogando todas aparições alienígenas do Brasil.
-
+> A versão exata do site que esta rodando no heroku está na branch `deployed-version`
 Embora pouco divulgado um dos grandes problemas que o agronegócio enfrenta atualmente são os círculos alienígenas nas plantações. Todos os anos parte significativa das safras de nossas plantações são perdidas por causa dos alienígenas, sendo assim a AgriConnected decidiu enfrentar o problema de minimizar os danos.
 
 Nosso projeto visa registrar todos os eventos ocorridos para que possamos identificar padrões e solucionar esse problema.
